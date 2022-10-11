@@ -1,0 +1,171 @@
+body
+{
+    --font_list : "Arial";
+
+    color: var(--text_color);
+    font-family: var(--font_list);
+}
+
+button
+{
+    border: solid 1px transparent;
+    background-color: var(--button_color);
+    font-family: var(--font_list);
+    font-size: 17px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+button:hover
+{
+    background-color: transparent;
+    border-color: var(--button_color);
+    color: var(--text_color);
+}
+
+input
+{
+    width: 80%;
+    margin-top: 20px;
+    height: 35px;
+    font-family: var(--font_list);
+}
+
+.flex_column
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.message
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: calc(var(--game_container_width) * 1px);
+    transform: translate(-50%,-50%);
+    background-color: var(--sub_color);
+    border: solid 1px var(--button_color);
+    padding: 10px;
+}
+
+.message button
+{
+    align-self: flex-end;
+}
+
+#game_container
+{
+    width: calc(var(--game_container_width) * 1px);
+    height: calc(var(--game_container_height) * 1px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    background-color: var(--game_container_background_color);
+    overflow: hidden;
+}
+
+#game_container .instruction
+{
+    font-size: 20px;
+    text-align: center;
+}
+
+#game_container .instruction_button
+{
+    font-size: 20px;
+}
+
+#game_container .player_game_state
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: var(--game_container_background_color);
+    padding: 10px;
+}
+
+#fruit
+{
+    position: absolute;
+    z-index: 50;
+    width: calc(var(--fruit_size) * 1px);
+    height: calc(var(--fruit_size) * 1px);
+    border-radius: 50%;
+    background-color: var(--fruit_color);
+    animation: linear infinite alternate 0.5s blink;
+}
+
+.snake_body_part
+{
+    position: absolute;
+    width: calc(var(--snake_body_part_size) * 1px); 
+    height: calc(var(--snake_body_part_size) * 1px); 
+    background-color: var(--snake_body_color);
+    border: solid 1px var(--game_container_background_color);
+}
+
+.snake_head
+{
+    background-color: var(--snake_head_color);
+    border-color: transparent;
+    z-index: 30;
+}
+
+.tools_container
+{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    align-items: flex-start;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--sub_color);
+    animation: linear infinite alternate blink 0.5s;
+}
+
+.tools_container button
+{
+    font-size: small;
+    padding: 5px;
+    margin: 0px;
+    margin-top: 5px;
+    border-radius: 0px;
+}
+
+.tools_container:hover 
+{
+    overflow: visible;
+    animation: none;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: initial;
+}
+
+.pad
+{
+    position: absolute;
+    bottom: 10px;
+}
+
+.pad button
+{
+    border-radius: 0px;
+    font-size: small;
+    padding: 5px;
+}
+
+@keyframes blink
+{
+    100%
+    {
+        opacity: 0.7
+    }
+}

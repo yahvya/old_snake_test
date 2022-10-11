@@ -1,0 +1,16 @@
+{
+  "name": "javascript_snake",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "yarn run electron .",
+    "compil_for_windows" : "electron-packager . Snake --platform=win32 --arch=ia32",
+    "compil_for_linux" : "electron-packager . Snake --platform=linux --arch=x32"
+  },
+  "devDependencies": {
+    "electron": "^17.1.2",
+    "electron-packager": "^15.4.0"
+  }
+}
